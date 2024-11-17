@@ -59,9 +59,14 @@ python3 shodanip.py --query_base "\"Set-Cookie: mongo-express=\" \"200 OK\"" --f
 2. **Consulta específica por puertos:**
 
 ```sh
-python3 shodanip.py --query_base "\"Set-Cookie: mongo-express=\" \"200 OK\"" --facet ip
+python3 shodanip.py --query_base "\"Set-Cookie: mongo-express=\" \"200 OK\"" --facet ip --port <port>
 ```
 ![port](https://github.com/user-attachments/assets/1cbb2508-885e-4d1f-b467-04aa90100912)
 
 
-3.
+3. **Exportar resultados a un archivo:**
+
+```sh
+python3 shodanip.py --query_base "\"Set-Cookie: mongo-express=\" \"200 OK\"" --facet ip --port <port> -o <file>
+```
+![o](https://github.com/user-attachments/assets/a635113b-a5c7-44df-b9e4-bbe473d17040)
