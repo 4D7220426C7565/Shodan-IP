@@ -24,6 +24,9 @@ El script recibe varios argumentos para personalizar la consulta:
 A. **Validación Inicial**
 
 - Si usa `-fh`, `--facet_help`, lee el archivo `facets.yaml`, muestra las opciones en formato tabular y terminal.
+  ···```sh
+        python3 shodanip.py -fh
+        ```     
 
 - ![facet](https://github.com/user-attachments/assets/9914d695-c892-4fa8-8936-f11460a6e8b0)
 
