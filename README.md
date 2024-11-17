@@ -21,7 +21,9 @@ El script recibe varios argumentos para personalizar la consulta:
 
 A. **Validación Inicial**
 
-- Si se usa `-fh`, `--facet_help`, lee el archivo `facets.yaml`, muestra las opciones en formato tabular y terminal.
+- Si usa `-fh`, `--facet_help`, lee el archivo `facets.yaml`, muestra las opciones en formato tabular y terminal.
+
+- ![facet](https://github.com/user-attachments/assets/9914d695-c892-4fa8-8936-f11460a6e8b0)
 
 B. **Validación de Puertos**
 
@@ -38,3 +40,28 @@ C. **Realización de Consultas**
 D. **Manejo de Resultados**
 
 - Si no se especifica un archivo de salida (`-o`, `--output`), muestra los resultados en formato JSON en la consola. De lo contrario se guardarán en un archivo de texto plano.
+
+## Uso
+
+
+```sh
+pip install -r requirements.txt
+```
+
+1. **Consulta básica sin puertos:**
+
+```sh
+python3 shodanip.py --query_base "\"Set-Cookie: mongo-express=\" \"200 OK\"" --facet port
+```
+![shodanip](https://github.com/user-attachments/assets/0901c01f-da1e-4bc4-81f2-056653e37fc3)
+
+
+2. **Consulta específica por puertos:**
+
+```sh
+python3 shodanip.py --query_base "\"Set-Cookie: mongo-express=\" \"200 OK\"" --facet ip
+```
+![port](https://github.com/user-attachments/assets/1cbb2508-885e-4d1f-b467-04aa90100912)
+
+
+3.
