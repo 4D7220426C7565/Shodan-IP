@@ -4,6 +4,8 @@ A diferencia de otras de herraminetas **SHODAN IP** no usa una **API**, permite 
 
 ![sshodan_ip](https://github.com/user-attachments/assets/360f38e6-dd83-455c-87c8-e5677c11b1b0)
 
+
+
 ## Características
 
 El script recibe varios argumentos para personalizar la consulta:
@@ -45,7 +47,8 @@ D. **Manejo de Resultados**
 
 
 ```sh
-pip install -r requirements.txt
+git clone https://github.com/4D7220426C7565/Shodan-IP.git \\
+cd Shodan-IP && pip install -r requirements.txt
 ```
 
 1. **Consulta básica sin puertos:**
