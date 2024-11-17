@@ -47,8 +47,7 @@ D. **Manejo de Resultados**
 
 
 ```sh
-git clone https://github.com/4D7220426C7565/Shodan-IP.git \\
-cd Shodan-IP && pip install -r requirements.txt
+git clone https://github.com/4D7220426C7565/Shodan-IP.git; cd Shodan-IP && pip install -r requirements.txt
 ```
 
 1. **Consulta básica sin puertos:**
