@@ -93,7 +93,7 @@ try:
 
         params["query"] = query
 
-        response = requests.get("https://www.shodan.io/search/facet?", params=params, timeout=25)
+        response = requests.get("https://www.shodan.io/search/facet?", params=params, timeout=35)
         response.raise_for_status()
 
         # Parse the HTML response
