@@ -51,12 +51,10 @@ if args.facet_help:
         table = [
             [Br + B + facet, W + description + R] for facet, description in facets.items()
         ]
-
         # Display the table
         output = tabulate(table, headers=["Facet", "Descripción"], tablefmt="mediawiki")
         output_no_header = re.sub(r'\{\|.*\n', '{|\n', output)
         print(output_no_header)
-
     except FileNotFoundError:
         print("Error: 'facets.yaml' No se encontró el archivo.")
     except yaml.YAMLError as e:
@@ -117,7 +115,6 @@ try:
                 f"{result}": value
                 for result, value in zip(results_text, facet_values_text)
             }
-
             # Store results by query
             results_by_port[f"query: {query} ({total})"] = associated_results
         else:
@@ -132,16 +129,14 @@ try:
         # Save only the IPs and ports in the output file
         with open(args.output, "w", encoding="utf-8") as file:
             for query, results in results_by_port.items():
-                # Extract the port from the query
-                match = re.search(r"port:(\d+)", query)
-                if match:
-                    port = match.group(1)  # Extract the port from the query
-                else:
-                    port = "unknown"  # Default value if no port is found
-
-                # Write each IP with its port
-                for ip in results:
-                    file.write(f"{ip}:{port}\n")
+                if not args.port:
+                    unique_ips = set(results)  # Usamos un set para eliminar duplicados
+                    file.write(",".join(unique_ips) + "\n")
+                else:  # Si se especifica el puerto, escribimos IPs y puertos en líneas separadas
+                    match = re.search(r"port:(\d+)", query)
+                    port = match.group(1) if match else "unknown"
+                    for ip in results:
+                        file.write(f"{ip}:{port}\n")
 
         print(f"{Br}{W}PATH:{R} {path_file}")
 
